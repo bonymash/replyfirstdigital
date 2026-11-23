@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Reply First Digital · Websites and AI assistants for South African businesses</title>
+<meta name="description" content="Mobile-first websites that turn visitors into calls and WhatsApps, and AI assistants that answer estate agency enquiries 24/7. Free homepage mock-up in 48 hours.">
+<meta property="og:title" content="Reply First Digital">
+<meta property="og:description" content="The business that answers first gets the job. Websites and AI assistants for South African businesses.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314524a'/%3E%3Cpath d='M18 44V20h14a8 8 0 0 1 0 16h-6l12 8' stroke='%23e9a13b' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: single column of full-width bands; dark hero and agency band bracket light content bands; form band last */
+:root{
+  --bg:#f4f2ec; --surface:#ffffff; --sunk:#e9e6dd; --line:#d8d3c6; --fg:#1a211d; --muted:#5b645d;
+  --brand:#14524a; --brand-deep:#0f2f2a; --on-deep:#eef3f0; --on-deep-muted:#a9bdb6;
+  --accent:#e9a13b; --accent-ink:#1b1306; --ok:#2e7a4d; --err:#a63d32;
+  --f-display:"Fraunces", Georgia, "Times New Roman", serif;
+  --f-body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap:1080px; --r:12px;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#121614; --surface:#1a201d; --sunk:#202824; --line:#323c37; --fg:#e8ece9; --muted:#9ba69f;
+  --brand:#5fb3a5; --brand-deep:#0b1513; --on-deep:#e8ece9; --on-deep-muted:#93a69f;
+  --accent:#e9a13b; --accent-ink:#1b1306; --ok:#6cc28e; --err:#ef8a7e; color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 var(--f-body)}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+section{padding-block:72px}
+h1,h2,h3{font-family:var(--f-display);font-weight:650;letter-spacing:-.015em;text-wrap:balance;margin:0}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.05}
+h2{font-size:clamp(28px,3.6vw,40px);line-height:1.12}
+h3{font-size:21px;line-height:1.25}
+p{margin:0}
+.eyebrow{font:600 13px var(--f-body);letter-spacing:.12em;text-transform:uppercase}
+.lead{font-size:19px;max-width:62ch}
+.muted{color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:16px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;text-decoration:none;font:600 16px var(--f-body);padding:13px 22px;border-radius:999px;border:2px solid transparent;cursor:pointer}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-accent:hover{filter:brightness(1.06)}
+.btn-ghost{border-color:currentColor;background:transparent}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:5;background:var(--brand-deep);color:var(--on-deep);border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:650 18px var(--f-display)}
+.mark{width:30px;height:30px;border-radius:8px;background:var(--brand);display:grid;place-items:center;color:var(--accent);font:700 17px var(--f-display)}
+.top nav{display:flex;gap:20px;font-size:15px}
+.top nav a{text-decoration:none;color:var(--on-deep-muted)}
+.top nav a:hover{color:var(--on-deep)}
+@media (max-width:700px){.top nav .hide-sm{display:none}}
+
+/* hero */
+.hero{background:var(--brand-deep);color:var(--on-deep);padding-block:88px 96px}
+.hero .eyebrow{color:var(--accent)}
+.hero .lead{color:var(--on-deep-muted)}
+.hero .stack{gap:22px;max-width:780px}
+.proof{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:10px;font-size:15px;color:var(--on-deep-muted)}
+.proof b{color:var(--on-deep);font-weight:600}
+
+/* problems */
+.cols3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:32px}
+.problem{border-top:3px solid var(--accent);padding-top:16px;display:flex;flex-direction:column;gap:8px}
+
+/* pricing */
+.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-top:32px}
+.price{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px}
+.price.feature{border:2px solid var(--brand)}
+.tag{align-self:flex-start;font:600 12px var(--f-body);letter-spacing:.06em;text-transform:uppercase;background:var(--brand);color:#fff;padding:3px 10px;border-radius:999px}
+.amount{font:650 38px/1 var(--f-display);font-variant-numeric:tabular-nums}
+.amount small{font:500 15px var(--f-body);color:var(--muted)}
+.price ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:16px}
+.price li{padding-left:24px;position:relative}
+.price li::before{content:"";position:absolute;left:2px;top:.55em;width:12px;height:7px;border-left:2px solid var(--brand);border-bottom:2px solid var(--brand);transform:rotate(-45deg)}
+.fine{font-size:14px;color:var(--muted);margin-top:18px}
+
+/* agencies */
+.agency{background:var(--brand-deep);color:var(--on-deep)}
+.agency .eyebrow{color:var(--accent)}
+.split{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start;margin-top:28px}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+.agency ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--on-deep-muted)}
+.agency ul b{color:var(--on-deep);font-weight:600}
+.chatcard{background:var(--surface);color:var(--fg);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.chathead{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--line)}
+.chathead b{color:var(--fg);font:650 16px var(--f-display)}
+.dot{width:8px;height:8px;border-radius:50%;background:#3aa76d;display:inline-block}
+.b{max-width:85%;padding:9px 13px;border-radius:14px;font-size:15px;line-height:1.45}
+.b.z{background:var(--sunk);align-self:flex-start;border-bottom-left-radius:4px}
+.b.u{background:var(--brand);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.agency-prices{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12)}
+@media (max-width:520px){.agency-prices{grid-template-columns:1fr}}
+.agency-prices p{color:var(--on-deep-muted);font-size:15px}
+.agency-prices strong{display:block;color:var(--on-deep);font:650 20px var(--f-display);margin-bottom:2px}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:32px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:8px}
+.steps li::before{content:counter(s);font:650 34px/1 var(--f-display);color:var(--brand)}
+.who{margin-top:44px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);max-width:760px}
+
+/* faq */
+.faq{max-width:780px;margin-top:24px;display:flex;flex-direction:column}
+details{border-bottom:1px solid var(--line);padding-block:16px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";font:500 22px/1 var(--f-body);color:var(--brand)}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted)}
+
+/* form */
+.formband{background:var(--sunk)}
+.formgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:start}
+@media (max-width:860px){.formgrid{grid-template-columns:1fr}}
+form{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.full{grid-column:1/-1}
+@media (max-width:560px){form{grid-template-columns:1fr}}
+label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:15px;min-width:0}
+label .opt{font-weight:400;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:16px;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg);width:100%}
+textarea{min-height:96px;resize:vertical}
+.check{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;font-size:15px}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--brand);flex:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.status{font-size:15px;min-height:1.4em}
+.status.ok{color:var(--ok);font-weight:600}
+.status.err{color:var(--err)}
+.thanks{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px}
+.promise{display:flex;flex-direction:column;gap:14px;margin-top:22px}
+.promise div{display:flex;gap:12px;align-items:baseline}
+.promise span{font:650 22px var(--f-display);color:var(--brand);min-width:56px}
+
+footer{background:var(--brand-deep);color:var(--on-deep-muted);font-size:14px;padding-block:32px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:var(--on-deep)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true">R</span>Reply First Digital</a>
+    <nav aria-label="Main">
+      <a class="hide-sm" href="#websites">Websites</a>
+      <a class="hide-sm" href="#agencies">Estate agencies</a>
+      <a href="#request">Free mock-up</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap stack">
+    <p class="eyebrow">Websites and AI assistants for South African businesses</p>
+    <h1>The business that answers first gets the job.</h1>
+    <p class="lead">We build mobile-first websites that turn visitors into calls and WhatsApps, and AI assistants that answer estate agency enquiries day and night, so no lead goes cold.</p>
+    <div class="btns">
+      <a class="btn btn-accent" href="#request">Get a free homepage mock-up</a>
+      <a class="btn btn-ghost" href="#agencies">AI assistant for estate agencies</a>
+    </div>
+    <div class="proof"><span><b>Fixed prices</b> from R3,500</span><span><b>No meetings needed</b>: WhatsApp and email</span><span><b>You own</b> your domain and content</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Where small businesses lose work</h2>
+    <div class="cols3">
+      <div class="problem"><h3>No website, or one that hides the phone number</h3><p class="muted">People search on their phone and call the first business that makes it easy. If they can't tap to call or WhatsApp you, they move on.</p></div>
+      <div class="problem"><h3>Enquiries that arrive after hours</h3><p class="muted">Buyers browse listings at night. By the time someone replies the next morning, they've booked a viewing with another agency.</p></div>
+      <div class="problem"><h3>No idea what's working</h3><p class="muted">Without a simple report you can't tell whether your site brings in work. Our Care Plan includes a monthly enquiry report.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="websites" style="padding-top:24px">
+  <div class="wrap">
+    <h2>Websites, priced up front</h2>
+    <p class="lead muted" style="margin-top:12px">For trades, salons, clinics and service businesses. Built for phones first, with tap-to-call and WhatsApp buttons on every page.</p>
+    <div class="prices">
+      <div class="price">
+        <h3>Launch Page</h3>
+        <p class="amount">R3,500</p>
+        <ul><li>One mobile-first page</li><li>WhatsApp and call buttons</li><li>Linked to your Google Business Profile</li><li>Basic SEO, 1 round of changes</li><li>Live in 5 working days</li></ul>
+      </div>
+      <div class="price feature">
+        <span class="tag">Most chosen</span>
+        <h3>Business Site</h3>
+        <p class="amount">R7,500</p>
+        <ul><li>Up to 5 pages</li><li>Enquiry form, WhatsApp and call buttons</li><li>On-page SEO and visitor analytics</li><li>2 rounds of changes</li><li>Live in 10–14 working days</li></ul>
+      </div>
+      <div class="price">
+        <h3>Care Plan</h3>
+        <p class="amount">R550<small> / month</small></p>
+        <ul><li>Hosting set up and looked after</li><li>Updates and backups</li><li>Up to 30 minutes of edits a month</li><li>Monthly enquiry report</li><li>Cancel with 30 days' notice</li></ul>
+      </div>
+    </div>
+    <p class="fine">Work starts after a 50% deposit and your content. Domain and hosting fees are billed at cost. You own your domain and content.</p>
+  </div>
+</section>
+
+<section id="agencies" class="agency">
+  <div class="wrap">
+    <p class="eyebrow">For estate agencies</p>
+    <h2 style="margin-top:10px">An AI assistant that answers every buyer in seconds</h2>
+    <div class="split">
+      <div class="stack">
+        <ul>
+          <li><b>Answers listing questions</b> on your website and WhatsApp, 24/7</li>
+          <li><b>Qualifies buyers and renters:</b> budget, area, finance, timeline</li>
+          <li><b>Handles viewing requests</b> and passes them to your agents</li>
+          <li><b>Hands serious buyers</b> to the right agent with a written summary</li>
+          <li><b>Follows up</b> leads who go quiet</li>
+        </ul>
+        <p style="color:var(--on-deep-muted)">It always says it's an AI assistant, and hands over to a person whenever a client asks.</p>
+        <div class="btns"><a class="btn btn-accent" href="demo/" target="_blank" rel="noopener">Try the live demo</a><a class="btn btn-ghost" href="#request">Get a demo with your listings</a></div>
+        <div class="agency-prices">
+          <p><strong>Lead Agent</strong>R4,500 setup + R1,800 / month. 3-month minimum, live in about 2 weeks.</p>
+          <p><strong>Agency Site + Agent</strong>R12,000 setup + R2,200 / month. A new agency website with the assistant built in.</p>
+        </div>
+      </div>
+      <div class="chatcard" aria-label="Example conversation from the demo">
+        <div class="chathead"><span class="dot"></span><div><b>Seaview Properties</b><br>Zara, AI assistant · 21:47</div></div>
+        <div class="b z">Hi, I'm Zara, Seaview Properties' AI assistant. Are you looking to buy or rent, and in which area?</div>
+        <div class="b u">I want to rent in Umhlanga</div>
+        <div class="b z">We have a furnished 2-bed beachfront apartment in Umhlanga Rocks for R24,000 a month, available from the 1st. Would you like to view it this week?</div>
+        <div class="b u">Saturday morning?</div>
+        <div class="b z">I can offer 09:30 or 11:00 on Saturday. Which suits you?</div>
+        <p class="muted" style="font-size:13px">Example from our demo with a fictional agency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><h3>Send a request</h3><p class="muted">Tell us about your business with the form below. Two minutes.</p></li>
+      <li><h3>See your free mock-up</h3><p class="muted">Within 48 hours (working days) you get a design of your new homepage by WhatsApp or email.</p></li>
+      <li><h3>Fixed quote, 50% deposit</h3><p class="muted">A one-page proposal with the price, scope and dates. Work starts once the deposit is paid.</p></li>
+      <li><h3>Review and launch</h3><p class="muted">You check a preview and a short video walkthrough, we make your changes, and it goes live after the final payment.</p></li>
+    </ol>
+    <div class="who stack">
+      <h3>Who you'll work with</h3>
+      <p class="muted">Reply First Digital is run by Mash, a South African IT and automation specialist. Everything happens online, so it doesn't matter where in South Africa you are. Prefer to talk? We're happy to do a quick video call.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <div class="faq">
+      <details><summary>Do I own the website?</summary><p>Yes. The domain and all content are registered in your name.</p></details>
+      <details><summary>What do I need to provide?</summary><p>Your logo, a few photos, a list of services and your contact details. We help write the text.</p></details>
+      <details><summary>How do I pay?</summary><p>By EFT invoice or a secure payment link. We never ask for card details over the phone or WhatsApp.</p></details>
+      <details><summary>Is the free mock-up really free?</summary><p>Yes. If you don't like it, that's the end of it: no invoice and no follow-up.</p></details>
+      <details><summary>Will an AI assistant put my clients off?</summary><p>It replies in seconds, says clearly that it's an AI, and passes real buyers to your agents. Try the demo and judge for yourself.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="request" class="formband">
+  <div class="wrap formgrid">
+    <div class="stack">
+      <h2>See your new homepage before you pay a cent</h2>
+      <p class="lead muted">Tell us about your business and we'll design a free mock-up of your homepage within 48 hours (working days). If you like it, we build it. If not, no hard feelings and no follow-up.</p>
+      <div class="promise">
+        <div><span>48h</span><p>Free homepage mock-up, by WhatsApp or email</p></div>
+        <div><span>1 day</span><p>Already know what you want? Quote and deposit invoice within one working day</p></div>
+        <div><span>0</span><p>Meetings required</p></div>
+      </div>
+    </div>
+
+    <div>
+      <form id="lead" novalidate>
+        <label class="full">What would you like?
+          <select name="interest" id="f-interest" required>
+            <option>Free homepage mock-up</option>
+            <option>Order a Launch Page (R3,500)</option>
+            <option>Order a Business Site (R7,500)</option>
+            <option>Lead Agent for my estate agency</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+        <label>Your name<input name="name" id="f-name" autocomplete="name" required></label>
+        <label>Business name<input name="business" id="f-business" autocomplete="organization" required></label>
+        <label class="full">What does your business do, and where?<input name="about" id="f-about" placeholder="e.g. Plumbing, Durban North and Umhlanga" required></label>
+        <label class="full"><span>Current website or Facebook page <span class="opt">(if any)</span></span><input name="current_site" id="f-site" inputmode="url"></label>
+        <label>Business phone or WhatsApp<input name="phone" id="f-phone" type="tel" autocomplete="tel" required></label>
+        <label>Email<input name="email" id="f-email" type="email" autocomplete="email" required></label>
+        <label class="full"><span>Services you want on the site, and anything else <span class="opt">(optional)</span></span><textarea name="message" id="f-message"></textarea></label>
+        <div class="hp" aria-hidden="true"><label>Leave this empty<input name="hp_field" id="f-hp" tabindex="-1" autocomplete="off"></label></div>
+        <label class="check full"><input type="checkbox" name="contact_consent" id="f-consent" required><span>I agree that Reply First Digital may contact me about this request by WhatsApp or email. I can ask you to stop at any time.</span></label>
+        <div class="full btns" style="align-items:center"><button class="btn btn-accent" id="f-send" type="submit">Send my request</button><p class="status" id="f-status" role="status"></p></div>
+        <p class="full fine" style="margin:0">We use your details only for this request and never sell them. Reply "stop" any time. Read our <a href="privacy/">privacy notice</a>.</p>
+      </form>
+      <div class="thanks" id="thanks" hidden>
+        <h3>Thanks, your request is in.</h3>
+        <p class="muted">We'll be in touch on WhatsApp or email within one working day. Mock-ups arrive within 48 working hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Reply First Digital is a trading name of Obsidian Arc Group (Pty) Ltd, registered in South Africa, reg. 2026/889316/07.</p>
+    <p><a href="privacy/">Privacy notice</a> · <a href="mailto:replyfirstdigital@gmail.com">replyfirstdigital@gmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+const ENDPOINT = "https://pknolndnumfnnyysvelf.supabase.co/functions/v1/lead-intake";
+const form = document.getElementById("lead"), status = document.getElementById("f-status"), send = document.getElementById("f-send");
+// Pre-select an option when a link carries ?want=launch or ?want=agent
+const want = new URLSearchParams(location.search).get("want");
+if (want) { const sel = document.getElementById("f-interest"); const map = {launch:1, business:2, agent:3}; if (map[want] !== undefined) sel.selectedIndex = map[want]; }
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  status.className = "status";
+  const req = ["f-name","f-business","f-about","f-phone","f-email"].map(id => document.getElementById(id));
+  const missing = req.find(el => !el.value.trim());
+  if (missing) { status.className = "status err"; status.textContent = "Please fill in " + missing.parentElement.firstChild.textContent.trim().toLowerCase() + "."; missing.focus(); return; }
+  const email = document.getElementById("f-email");
+  if (!email.checkValidity()) { status.className = "status err"; status.textContent = "Please check your email address."; email.focus(); return; }
+  if (!document.getElementById("f-consent").checked) { status.className = "status err"; status.textContent = "Please tick the box so we're allowed to reply."; return; }
+  const data = Object.fromEntries(new FormData(form).entries());
+  data.contact_consent = true; data.source = "website"; data.page = location.href.split("?")[0];
+  send.disabled = true; status.textContent = "Sending…";
+  try {
+    const r = await fetch(ENDPOINT, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(data) });
+    const j = await r.json().catch(() => ({}));
+    if (r.ok && j.ok) { form.hidden = true; document.getElementById("thanks").hidden = false; }
+    else { status.className = "status err"; status.textContent = j.error || "Something went wrong. Please email replyfirstdigital@gmail.com."; }
+  } catch {
+    status.className = "status err"; status.textContent = "We couldn't send that. Check your connection, or email replyfirstdigital@gmail.com.";
+  }
+  send.disabled = false;
+});
+</script>
+</body>
+</html>
