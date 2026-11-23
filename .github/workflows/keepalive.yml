@@ -1,0 +1,11 @@
+name: Keep backend awake
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping keepalive
+        run: curl -fsS --retry 3 --retry-delay 20 https://pknolndnumfnnyysvelf.supabase.co/functions/v1/keepalive
